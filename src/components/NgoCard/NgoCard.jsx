@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './NgoCard.module.css'
 import { normalizeUrl } from '../../utils/urlHelpers.js'
+import { VerificationBadges } from '../VerificationBadge/VerificationBadge.jsx'
 
 export function NgoCard({ ngo, isActive }) {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -28,6 +29,9 @@ export function NgoCard({ ngo, isActive }) {
     >
       <div className={styles.imageContainer}>
         <img src={ngo.image} alt={ngo.name} className={styles.image} />
+        <div className={styles.imageBadges}>
+          <VerificationBadges verifications={ngo.verifications} compact={true} />
+        </div>
       </div>
 
       <div className={styles.content}>

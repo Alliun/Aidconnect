@@ -9,6 +9,7 @@ export const NGOS = [
     id: 'hope-haven',
     name: 'Hope Haven Orphan Support',
     category: 'Children',
+    verifications: ['GOVERNMENT', 'TAX_EXEMPT', 'AUDITED'],
     description:
       'Supports children with education supplies, meals, and local volunteer programs.',
     address: '12 Lakeview Road, Central District',
@@ -35,6 +36,7 @@ export const NGOS = [
     id: 'paws-shelter',
     name: 'Paws & Care Animal Shelter',
     category: 'Animals',
+    verifications: ['GOVERNMENT', 'TRANSPARENCY'],
     description:
       'Provides shelter for rescued animals and basic care. Accepts food donations and volunteers.',
     address: '77 Green Street, North Side',
@@ -60,6 +62,7 @@ export const NGOS = [
     id: 'silver-smiles',
     name: 'Silver Smiles Elder Support',
     category: 'Elderly',
+    verifications: ['GOVERNMENT', 'TAX_EXEMPT'],
     description:
       'Helps elderly residents with meals, basic supplies, and community visits.',
     address: '5 Sunrise Avenue, East Block',
@@ -85,6 +88,7 @@ export const NGOS = [
     id: 'city-care-clinic',
     name: 'City Care Medical Aid Center',
     category: 'Medical',
+    verifications: ['GOVERNMENT', 'AUDITED', 'TRANSPARENCY'],
     description:
       'Connects patients with basic medical supplies and supports local health camps.',
     address: '44 Clinic Lane, South Market',
@@ -110,6 +114,7 @@ export const NGOS = [
     id: 'friendly-vet',
     name: 'Friendly Vet & Rescue Center',
     category: 'Animals',
+    verifications: ['GOVERNMENT'],
     description:
       'Low-cost vet support for rescued animals. Works with local shelters and rescuers.',
     address: '18 Park Corner, West End',
@@ -135,6 +140,7 @@ export const NGOS = [
     id: 'bright-future',
     name: 'Bright Future Children Foundation',
     category: 'Children',
+    verifications: ['GOVERNMENT', 'TAX_EXEMPT'],
     description:
       'Focuses on education and nutrition for underprivileged children in the city.',
     address: '23 Education Street, Learning Block',
@@ -210,6 +216,7 @@ export const NGOS = [
     id: 'udhavum-ullangal',
     name: 'Udhavum Ullangal Trust',
     category: 'Children',
+    verifications: ['GOVERNMENT', 'FCRA', 'TAX_EXEMPT', 'AUDITED'],
     description:
       'Dedicated to supporting underprivileged children with education, nutrition, and care.',
     address: 'T. Nagar, Chennai',
@@ -235,6 +242,7 @@ export const NGOS = [
     id: 'blue-cross-india',
     name: 'Blue Cross of India',
     category: 'Animals',
+    verifications: ['GOVERNMENT', 'FCRA', 'TAX_EXEMPT', 'TRANSPARENCY'],
     description:
       'Leading animal welfare organization providing shelter, rescue, and care for animals in need.',
     address: 'Velachery Road, Guindy',
@@ -260,6 +268,7 @@ export const NGOS = [
     id: 'helpage-india-chennai',
     name: 'HelpAge India – Chennai Chapter',
     category: 'Elderly',
+    verifications: ['GOVERNMENT', 'FCRA', 'TAX_EXEMPT', 'AUDITED'],
     description:
       'Supporting elderly citizens with healthcare, nutrition, and social support services.',
     address: 'Adyar, Chennai',
@@ -310,6 +319,7 @@ export const NGOS = [
     id: 'sneha-foundation',
     name: 'SNEHA Foundation',
     category: 'Medical',
+    verifications: ['GOVERNMENT', 'TAX_EXEMPT', 'TRANSPARENCY'],
     description:
       'Provides mental health support and medical care services to vulnerable communities.',
     address: 'Anna Nagar, Chennai',
@@ -335,6 +345,7 @@ export const NGOS = [
     id: 'akshaya-patra',
     name: 'Akshaya Patra Foundation',
     category: 'Children',
+    verifications: ['GOVERNMENT', 'FCRA', 'TAX_EXEMPT', 'AUDITED', 'TRANSPARENCY'],
     description:
       'World\'s largest NGO-run mid-day meal program providing nutritious meals to school children.',
     address: 'Yelahanka New Town, Bangalore',
@@ -410,6 +421,7 @@ export const NGOS = [
     id: 'samarthanam-trust',
     name: 'Samarthanam Trust for the Disabled',
     category: 'Disabled',
+    verifications: ['GOVERNMENT', 'FCRA', 'TAX_EXEMPT', 'AUDITED'],
     description:
       'Empowering persons with disabilities through education, skill development, and support services.',
     address: 'HSR Layout, Bangalore',

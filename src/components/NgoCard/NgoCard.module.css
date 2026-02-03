@@ -26,6 +26,7 @@
   height: 180px;
   overflow: hidden;
   background: var(--border);
+  position: relative;
 }
 
 .image {
@@ -134,3 +135,12 @@
   flex-wrap: wrap;
 }
 
+.imageBadges {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  max-width: calc(100% - 16px);
+}
