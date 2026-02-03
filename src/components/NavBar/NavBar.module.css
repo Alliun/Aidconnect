@@ -83,3 +83,65 @@
   box-shadow: 0 4px 12px rgba(31, 138, 76, 0.15);
 }
 
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userName {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.logoutBtn {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: var(--green-050);
+  border-color: var(--green);
+}
+
+.authButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.loginBtn, .signupBtn {
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loginBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.loginBtn:hover {
+  background: var(--green-050);
+  border-color: var(--green);
+}
+
+.signupBtn {
+  background: var(--green);
+  border: 1px solid var(--green);
+  color: white;
+}
+
+.signupBtn:hover {
+  background: var(--green-600);
+}
