@@ -1,18 +1,23 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext.jsx'
 import { getNgoById } from '../../data/ngos.js'
 import { normalizeUrl } from '../../utils/urlHelpers.js'
+import { DonationCertificate } from '../../components/DonationCertificate/DonationCertificate.jsx'
 import styles from './DonationPage.module.css'
 
 export function DonationPage() {
   const { ngoId } = useParams()
   const navigate = useNavigate()
+  const { user } = useAuth()
   const ngo = getNgoById(ngoId)
 
   const [donationAmount, setDonationAmount] = useState('')
   const [donorName, setDonorName] = useState('')
-  const [donorEmail, setDonorEmail] = useState('')
+  const [donorEmail, setDonorEmail] = useState(user?.email || '')
   const [donationType, setDonationType] = useState('Money')
+  const [showCertificate, setShowCertificate] = useState(false)
+  const [completedDonation, setCompletedDonation] = useState(null)
 
   if (!ngo) {
     return (
@@ -26,9 +31,27 @@ export function DonationPage() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    // In a real app, this would send data to a payment gateway
-    alert(`Thank you! Your donation of ₹${donationAmount} to ${ngo.name} has been recorded.`)
-    navigate(`/ngo/${ngo.id}`)
+    
+    // Create donation record
+    const donation = {
+      id: 'DON' + Date.now(),
+      amount: donationAmount,
+      ngoName: ngo.name,
+      ngoId: ngo.id,
+      donorName,
+      donorEmail,
+      donationType,
+      date: new Date().toISOString(),
+      status: 'completed'
+    }
+    
+    setCompletedDonation(donation)
+    setShowCertificate(true)
+  }
+
+  const handleDownloadCertificate = (certificateElement) => {
+    // In production, use html2canvas + jsPDF to generate PDF
+    alert('Certificate download feature will be implemented with PDF generation library')
   }
 
   return (
@@ -132,6 +155,17 @@ export function DonationPage() {
             </a>
           </div>
         </div>
+        
+        {showCertificate && completedDonation && (
+          <DonationCertificate
+            donation={completedDonation}
+            onDownload={handleDownloadCertificate}
+            onClose={() => {
+              setShowCertificate(false)
+              navigate(`/ngo/${ngo.id}`)
+            }}
+          />
+        )}
       </div>
     </main>
   )

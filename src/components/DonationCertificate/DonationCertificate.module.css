@@ -1,0 +1,252 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: var(--card-bg);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--text);
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate {
+  background: white;
+  color: #000;
+  margin: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.certificateHeader {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-600) 100%);
+  color: white;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.certificateHeader h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.certificateHeader p {
+  margin: 4px 0 0;
+  opacity: 0.9;
+}
+
+.certificateBody {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 24px;
+  padding: 24px;
+}
+
+.mainContent h4 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: var(--green);
+}
+
+.thankYou {
+  margin: 0 0 24px;
+  color: #666;
+  font-size: 16px;
+}
+
+.donationDetails {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.detailRow:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.impactSection {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.impactSection h5 {
+  margin: 0 0 12px;
+  color: var(--green);
+}
+
+.impactText {
+  margin: 0;
+  font-weight: 500;
+  color: #2d5a2d;
+}
+
+.taxSection {
+  border: 2px solid #e3f2fd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.taxBadge {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.taxIcon {
+  font-size: 24px;
+}
+
+.taxBadge strong {
+  color: #1976d2;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.taxBadge p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.qrSection {
+  text-align: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.qrCode {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+}
+
+.qrSection p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.verificationInfo {
+  padding: 16px;
+  background: linear-gradient(135deg, #f3e5f5 0%, #fce4ec 100%);
+  border-radius: 8px;
+}
+
+.verificationInfo h6 {
+  margin: 0 0 8px;
+  color: #7b1fa2;
+  font-size: 14px;
+}
+
+.verificationInfo p {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: #666;
+}
+
+.blockchainHash {
+  font-family: monospace;
+  font-size: 10px;
+  background: rgba(123, 31, 162, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.certificateFooter {
+  background: #f8f9fa;
+  padding: 16px 24px;
+  border-top: 1px solid #e9ecef;
+}
+
+.footerText p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.actions {
+  padding: 20px 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .certificateBody {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal {
+    margin: 10px;
+  }
+}
