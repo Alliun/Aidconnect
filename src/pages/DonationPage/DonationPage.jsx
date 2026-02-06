@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext.jsx'
 import { useNotifications } from '../../components/NotificationSystem/NotificationSystem.jsx'
+import { useGamification } from '../../components/Gamification/GamificationContext.jsx'
 import { getNgoById } from '../../data/ngos.js'
 import { normalizeUrl } from '../../utils/urlHelpers.js'
 import { DonationCertificate } from '../../components/DonationCertificate/DonationCertificate.jsx'
@@ -12,6 +13,7 @@ export function DonationPage() {
   const navigate = useNavigate()
   const { user } = useAuth()
   const { addNotification } = useNotifications()
+  const { addDonation } = useGamification()
   const ngo = getNgoById(ngoId)
 
   const [donationAmount, setDonationAmount] = useState('')
@@ -36,18 +38,16 @@ export function DonationPage() {
     e.preventDefault()
     setIsProcessing(true)
     
-    // Show processing notification
     addNotification({
       type: 'info',
       title: 'Processing Donation',
       message: 'Please wait while we process your donation...'
     })
     
-    // Simulate payment processing
     setTimeout(() => {
       const donation = {
         id: 'DON' + Date.now(),
-        amount: donationAmount,
+        amount: parseInt(donationAmount),
         ngoName: ngo.name,
         ngoId: ngo.id,
         donorName,
@@ -60,7 +60,9 @@ export function DonationPage() {
       setCompletedDonation(donation)
       setIsProcessing(false)
       
-      // Show success notification
+      // Update gamification
+      const { newBadges, levelUp } = addDonation(donation.amount, ngo.id)
+      
       addNotification({
         type: 'donation',
         title: 'Donation Successful!',
@@ -68,7 +70,30 @@ export function DonationPage() {
         duration: 8000
       })
       
-      // Show impact notification
+      // Show level up notification
+      if (levelUp) {
+        setTimeout(() => {
+          addNotification({
+            type: 'success',
+            title: '🎉 Level Up!',
+            message: 'Congratulations! You\'ve reached a new donor level!',
+            duration: 10000
+          })
+        }, 1500)
+      }
+      
+      // Show new badges
+      if (newBadges.length > 0) {
+        setTimeout(() => {
+          addNotification({
+            type: 'success',
+            title: '🏆 New Badge Unlocked!',
+            message: `You earned ${newBadges.length} new badge${newBadges.length > 1 ? 's' : ''}!`,
+            duration: 10000
+          })
+        }, 2500)
+      }
+      
       setTimeout(() => {
         addNotification({
           type: 'impact',
@@ -76,7 +101,7 @@ export function DonationPage() {
           message: `Your donation will provide ${Math.floor(donationAmount / 50)} meals to children in need!`,
           duration: 10000
         })
-      }, 2000)
+      }, 3500)
       
       setShowCertificate(true)
     }, 2000)

@@ -39,12 +39,17 @@ export function NavBar() {
             </NavLink>
             
             {user ? (
-              <div className={styles.userMenu}>
-                <span className={styles.userName}>{user.email}</span>
-                <button onClick={logout} className={styles.logoutBtn}>
-                  Logout
-                </button>
-              </div>
+              <>
+                <NavLink to="/profile" className={({ isActive }) => (isActive ? styles.active : styles.link)}>
+                  🏆 Profile
+                </NavLink>
+                <div className={styles.userMenu}>
+                  <span className={styles.userName}>{user.email}</span>
+                  <button onClick={logout} className={styles.logoutBtn}>
+                    Logout
+                  </button>
+                </div>
+              </>
             ) : (
               <div className={styles.authButtons}>
                 <button onClick={() => openAuthModal('login')} className={styles.loginBtn}>Login</button>
