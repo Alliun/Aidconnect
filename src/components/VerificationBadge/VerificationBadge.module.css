@@ -62,6 +62,48 @@
   color: #ffffff;
 }
 
+.gold {
+  background: linear-gradient(135deg, #ca8a04 0%, #eab308 100%);
+  color: #ffffff;
+}
+
+/* Size variants */
+.xs {
+  padding: 2px 4px;
+  font-size: 8px;
+  gap: 2px;
+}
+
+.sm {
+  padding: 2px 5px;
+  font-size: 9px;
+  gap: 2px;
+}
+
+.md {
+  /* default size - already defined in .badge */
+}
+
+.lg {
+  padding: 4px 8px;
+  font-size: 11px;
+  gap: 4px;
+}
+
+/* Animation for special badges */
+.animate {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 2px 20px rgba(255, 215, 0, 0.4);
+  }
+}
+
 /* Dark mode - same professional gradients */
 [data-theme="dark"] .blue {
   background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
@@ -81,4 +123,8 @@
 
 [data-theme="dark"] .teal {
   background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+}
+
+[data-theme="dark"] .gold {
+  background: linear-gradient(135deg, #ca8a04 0%, #eab308 100%);
 }
