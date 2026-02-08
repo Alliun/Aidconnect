@@ -30,7 +30,7 @@
     "globals": "^16.5.0",
     "vite": "^7.2.4"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "AidConnect - A modern NGO and donation discovery platform connecting donors with verified organizations in Chennai. Features smart filtering, interactive maps, AI matching, and comprehensive verification systems.",
   "main": "eslint.config.js",
   "repository": {
     "type": "git",

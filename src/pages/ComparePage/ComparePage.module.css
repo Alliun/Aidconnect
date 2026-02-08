@@ -1,0 +1,234 @@
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 2px dashed var(--border);
+  margin-bottom: 48px;
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.compareCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.remove {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.remove:hover {
+  background: #EF4444;
+  color: white;
+}
+
+.image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.compareCard h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.category {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: rgba(99, 102, 241, 0.05);
+  border-radius: 12px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metricLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.metricBar {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.metricFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.metricValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.infoRow span {
+  color: var(--muted);
+}
+
+.selector {
+  margin-top: 48px;
+}
+
+.selector h2 {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.ngoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.ngoItem:hover:not(:disabled) {
+  border-color: #6366F1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.ngoItem:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ngoItem.selected {
+  border-color: #6366F1;
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.ngoItem img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.ngoInfo {
+  flex: 1;
+  text-align: left;
+}
+
+.ngoName {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.ngoCategory {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.check {
+  font-size: 20px;
+  color: #6366F1;
+}
+
+@media (max-width: 768px) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+[data-theme="dark"] .metricBar {
+  background: rgba(255, 255, 255, 0.1);
+}

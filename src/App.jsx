@@ -13,6 +13,8 @@ import { MatchingPage } from './pages/MatchingPage/MatchingPage.jsx'
 import { AboutPage } from './pages/AboutPage/AboutPage.jsx'
 import { DonationPage } from './pages/DonationPage/DonationPage.jsx'
 import { ProfilePage } from './pages/ProfilePage/ProfilePage.jsx'
+import { ComparePage } from './pages/ComparePage/ComparePage.jsx'
+import { VolunteerPage } from './pages/VolunteerPage/VolunteerPage.jsx'
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
                 <Route path="/ngo/:id" element={<NgoDetailPage />} />
                 <Route path="/donate/:ngoId" element={<DonationPage />} />
                 <Route path="/matching" element={<MatchingPage />} />
+                <Route path="/compare" element={<ComparePage />} />
+                <Route path="/volunteer" element={<VolunteerPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />

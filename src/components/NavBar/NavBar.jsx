@@ -34,6 +34,12 @@ export function NavBar() {
             <NavLink to="/matching" className={({ isActive }) => (isActive ? styles.active : styles.link)}>
               Matching
             </NavLink>
+            <NavLink to="/compare" className={({ isActive }) => (isActive ? styles.active : styles.link)}>
+              Compare
+            </NavLink>
+            <NavLink to="/volunteer" className={({ isActive }) => (isActive ? styles.active : styles.link)}>
+              Volunteer
+            </NavLink>
             <NavLink to="/about" className={({ isActive }) => (isActive ? styles.active : styles.link)}>
               About
             </NavLink>

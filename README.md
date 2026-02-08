@@ -1,16 +1,138 @@
-# React + Vite
+# AidConnect - NGO & Donation Discovery Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AidConnect** is a modern web application that connects donors with trusted NGOs, shelters, and community centers in Chennai. Built with React and Vite, it provides a seamless experience for discovering verified organizations and making meaningful contributions.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Core Functionality
+- **Smart Discovery**: Browse and filter NGOs by category, donation type, and location
+- **Interactive Map**: Visualize NGO locations with Leaflet integration
+- **Intelligent Matching**: AI-powered recommendation system to match donors with suitable organizations
+- **Verification System**: Multi-tier badge system showing government registration, certifications, and trust indicators
+- **Dark Mode**: Full theme support for comfortable browsing
 
-## React Compiler
+### Key Components
+- **Disaster Alert Banner**: Real-time updates on urgent relief needs with progress tracking
+- **Dynamic Donation Banner**: Rotating showcase of impact areas (Education, Healthcare, Animal Welfare, etc.)
+- **NGO Cards**: Detailed organization profiles with contact info, accepted donations, and verification badges
+- **Receipt Generator**: PDF receipt generation for donations
+- **Responsive Design**: Mobile-first approach with seamless desktop experience
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Verification Badges
+- 🏛️ Government Registered
+- 🌍 FCRA Approved
+- 📋 80G Tax Certified
+- ✅ Audited
+- 👁️ Transparent
+- ⭐ Trusted Partner
+- 🏅 ISO Certified
+- 🏆 Award Winner
+- 🔒 Secure Payments
+- 🇮🇳 NITI Aayog Registered
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React 19.2.0
+- **Build Tool**: Vite 7.2.4
+- **Routing**: React Router DOM 7.12.0
+- **Maps**: Leaflet 1.9.4 + React Leaflet 5.0.0
+- **Backend**: Firebase 12.8.0
+- **PDF Generation**: jsPDF 4.1.0 + html2canvas 1.4.1
+- **Styling**: CSS Modules
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Alliun/ultron.git
+
+# Navigate to project directory
+cd ultron-9
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## 🛠️ Available Scripts
+
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── DisasterAlert/      # Urgent relief notifications
+│   ├── DonationBanner/     # Impact area showcase
+│   ├── NgoCard/            # Organization cards
+│   ├── VerificationBadge/  # Trust indicators
+│   └── ...
+├── pages/
+│   ├── LandingPage/        # Home page
+│   ├── DiscoverPage/       # NGO discovery
+│   ├── MatchingPage/       # AI matching
+│   └── ...
+├── data/
+│   └── ngos.js             # NGO database
+└── App.jsx                 # Main app component
+```
+
+## 🎨 Key Features Breakdown
+
+### 1. Discovery System
+- Filter by 10+ categories (Children, Elderly, Animals, Medical, etc.)
+- Search by donation type (Money, Food, Clothes, Books, Volunteering)
+- Distance-based sorting
+- Real-time filtering
+
+### 2. Verification System
+- Government registration validation
+- Tax exemption certificates
+- Financial audit status
+- Transparency ratings
+- Award recognition
+
+### 3. User Experience
+- No sign-up required
+- Direct links to official NGO websites
+- One-click map navigation
+- Downloadable donation receipts
+- Mobile-responsive design
+
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 📄 License
+
+ISC
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📧 Contact
+
+For issues and questions, please visit: [GitHub Issues](https://github.com/Alliun/ultron/issues)
+
+## 🙏 Acknowledgments
+
+- Built with React + Vite
+- Map data from OpenStreetMap
+- Icons from emoji standards
+- Images from Unsplash
+
+---
+
+**Made with ❤️ for the Chennai community**
