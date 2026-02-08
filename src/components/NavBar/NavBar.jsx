@@ -47,7 +47,7 @@ export function NavBar() {
             {user ? (
               <>
                 <NavLink to="/profile" className={({ isActive }) => (isActive ? styles.active : styles.link)}>
-                  🏆 Profile
+                    Profile
                 </NavLink>
                 <div className={styles.userMenu}>
                   <span className={styles.userName}>{user.email}</span>
